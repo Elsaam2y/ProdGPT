@@ -88,7 +88,7 @@ You can deploy the application using [Vercel](https://vercel.com?utm_source=gith
 
 ## 💫 Acknowledgments
 
-I would like to express my sincere gratitude to the following repositories, which have been instrumental in shaping and influencing many parts of this application, especially the **Stripe** payment.
+I would like to express my sincere gratitude to the following repositories, which have been instrumental in shaping and influencing many parts of this application.
 
 - [next13-ai-saas](https://github.com/AntonioErdeljac/next13-ai-saas)
 - [RoomGPT](https://github.com/Nutlope/roomGPT/tree/main)
