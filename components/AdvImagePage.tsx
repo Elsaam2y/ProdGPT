@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Heading } from '@/components/heading';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -15,7 +14,6 @@ import { useProModal } from '@/hooks/use-pro-modal';
 import { formSchema } from './AdvImageconstants';
 import CustomUploadDropZone from './UploadDropZone';
 import downloadPhoto from '../utils/downloadPhoto';
-import { Camera } from 'lucide-react';
 
 export const AdvImagePage = () => {
   const router = useRouter();
@@ -40,9 +38,10 @@ export const AdvImagePage = () => {
   const [photoName, setPhotoName] = useState<string | null>(null);
   const [originalPhoto, setOriginalPhoto] = useState<string | null>(null);
   const [generateClicked, setGenerateClicked] = useState(false);
-  const submitAdvertising = async (prompt: string, imageUrl: string | null) => {
-    
+
+  const submitAdvertising = async (prompt: string, imageUrl: string | null) => {    
     setIsLoading(true); // Set loading to true
+    const timeoutDuration = 20000; // Set timeout to 20s
     await new Promise((resolve) => setTimeout(resolve, 200));
     if (imageUrl) {
       const res = await fetch('/api/advertising', {
@@ -69,25 +68,58 @@ export const AdvImagePage = () => {
     }
   };
 
+
+//   // Start a timer to track the response time
+//   const timeoutPromise = new Promise((_, reject) => {
+//     setTimeout(() => {
+//       reject(new Error('Server is busy, please try again later'));
+//     }, timeoutDuration);
+//   });
+
+//   try {
+//     if (imageUrl) {
+//       const res = await Promise.race([timeoutPromise, fetch('/api/advertising', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ prompt, imageUrl }),
+//       })]);
+
+//       // Check if the response is the timeout error
+//       if (res instanceof Error && res.message === 'Server is busy, please try again later') {
+//         setError(res.message);
+//       } else if (res.status !== 200) {
+//         setError('An error occurred.');
+//       } else {
+//         const newPhoto = await res.json();
+//         setGeneratedImage(newPhoto[1]);
+//         setDisplayImages(true); // Set displayImages to true after successful API call
+//       }
+//     } else {
+//       // Handle the case where no image is uploaded
+//     }
+//   } catch (error) {
+//     setError('An error occurred.');
+//   } finally {
+//     // Always clear the loading state when done
+//     setIsLoading(false);
+//   }
+// };
+
+
   return (
     <div className="text-white">
-      <Heading
-        title={
-          <div className="flex items-center">
-            <a href="https://github.com/Elsaam2y/ProdGPT" target="_blank" rel="noopener noreferrer">
-              <svg
-                aria-hidden="true"
-                className="h-5 w-5 mr-3 fill-yellow-500 group-hover:fill-yellow-300"
-              >
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
-              </svg>
-            </a>
-            Advertising Images Generation
-          </div>
-        }
-        description=""
-        bgColor="bg-black-500/10"
-        />
+      <div className="flex items-center">
+        <a href="https://github.com/Elsaam2y/ProdGPT" target="_blank" rel="noopener noreferrer">
+          <svg
+            aria-hidden="true"
+            className="h-5 w-5 mr-3 fill-yellow-500 group-hover:fill-yellow-300"
+          >
+            <path d="M12 2C6.4772Z" />
+          </svg>
+        </a>
+      </div>  
       <div className="px-4 lg:px-8 mt-10">
         <div className="px-4 lg:px-8 flex justify-center mt-3 items-center mb-5">
           {/* <div className="mx-auto max-w-4xl font-display text-6xl font-bold tracking-normal text-slate-100 sm:text-4xl mb-5"> */}
@@ -204,7 +236,7 @@ export const AdvImagePage = () => {
                   // Handle the case where no image is uploaded
                 }
               }}
-              className="col-span-12 lg:col-span-2 w-full"
+              className="col-span-12 lg:col-span-2 w-full hover:bg-blue-500 bg-blue-600"
               disabled={isLoading}
             >
               {isLoading ? 'Generating...' : 'Generate'}

@@ -37,7 +37,7 @@ export const FreeCounter = ({
               {MAX_FREE_COUNTS - apiLimitCount} Remaining credits
             </p>
           </div>
-          <Button onClick={proModal.onOpen} className="w-full">
+          <Button onClick={proModal.onOpen} className="w-full hover:bg-blue-500 bg-blue-600">
             Upgrade
             <Zap className="w-4 h-4 ml-2 fill-white" />
           </Button>

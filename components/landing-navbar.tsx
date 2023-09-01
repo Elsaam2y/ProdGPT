@@ -4,7 +4,6 @@ import { Montserrat } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useAuth } from '@clerk/nextjs';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -31,7 +30,7 @@ export const LandingNavbar = () => {
         rel="noopener noreferrer"
       >
         <Github />
-        <p>Star on GitHub</p>
+        <p>GitHub</p>
       </a>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? '/Images' : '/sign-up'}>
@@ -45,7 +44,7 @@ export const LandingNavbar = () => {
   );
 };
 
-function Github({ className }: { className?: string }) {
+export function Github({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

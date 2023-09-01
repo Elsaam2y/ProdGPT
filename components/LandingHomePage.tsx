@@ -18,8 +18,7 @@ export const LandingHomePage = () => {
         </span>
         </h1>
         <h2 className="mx-auto mt-12 max-w-xl text-lg sm:text-gray-400 text-gray-500 leading-7">
-          Upload a picture of your product and generate different advertising
-          images for it.
+        Upload a picture of your product and generate various advertising images for it using a text description.
         </h2>
         <div className="mt-6">
           {' '}

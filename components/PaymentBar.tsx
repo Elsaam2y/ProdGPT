@@ -17,7 +17,7 @@ export const PaymentBar = ({
   const pathname = usePathname();
 
   return (
-<div className="bg-[#111827] text-white bg-[#0c0a09] ">
+<div className="bg-[#111827] text-white bg-[#0c0a09]">
   <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
 </div>
 
