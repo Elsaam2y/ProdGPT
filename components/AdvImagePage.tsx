@@ -261,8 +261,8 @@ export const AdvImagePage = () => {
                   alt="Uploaded Image"
                   src={originalPhoto}
                   className="rounded-2xl"
-                  width={200}
-                  height={200}
+                  width={300}
+                  height={300}
                 />
               </div>
             )}
@@ -275,8 +275,8 @@ export const AdvImagePage = () => {
                     alt="Generated Image"
                     src={generatedImage}
                     className="rounded-2xl"
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     onLoadingComplete={() => setGeneratedLoaded(true)}
                   />
                 </a>
