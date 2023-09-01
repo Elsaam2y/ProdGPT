@@ -1,4 +1,4 @@
-# [ProdGPT](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting)
+# [ProdGPT](https://prod-gpt.vercel.app)
 
 This repository is dedicated to the development of a Next.js SaaS AI Platform for **generating advertising images** using AI. The model utilizes [stable-diffusion-2-inpainting](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting) and [ControlNet](https://github.com/lllyasviel/ControlNet) algorithms to repaint the product backgrounds based on an input image and a text description of the desired output image. It is advisable to use images with transparent or simple backgrounds.
 
