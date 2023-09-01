@@ -219,8 +219,8 @@ export const AdvImagePage = () => {
                 alt="Uploaded Photo"
                 src={originalPhoto}
                 className="rounded-2xl" // Adjust styling as needed
-                width={200}
-                height={200}
+                width={350}
+                height={350}
               />
             </div>
           )}
