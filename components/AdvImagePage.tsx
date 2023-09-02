@@ -219,8 +219,8 @@ export const AdvImagePage = () => {
                 alt="Uploaded Photo"
                 src={originalPhoto}
                 className="rounded-2xl" // Adjust styling as needed
-                width={400}
-                height={400}
+                width={350}
+                height={350}
               />
             </div>
           )}
@@ -254,18 +254,18 @@ export const AdvImagePage = () => {
         </div>
         {displayImages && (
           <div className="flex items-center justify-center">
-            {/* {originalPhoto && (
+            {originalPhoto && (
               <div className="flex flex-col items-center justify-center mr-8">
                 <h2 className="mb-1 font-medium text-lg">Uploaded Image</h2>
                 <Image
                   alt="Uploaded Image"
                   src={originalPhoto}
                   className="rounded-2xl"
-                  width={300}
-                  height={300}
+                  width={250}
+                  height={250}
                 />
               </div>
-            )} */}
+            )}
 
             {generatedImage && (
               <div className="flex flex-col items-center justify-center">
@@ -275,8 +275,8 @@ export const AdvImagePage = () => {
                     alt="Generated Image"
                     src={generatedImage}
                     className="rounded-2xl"
-                    width={300}
-                    height={300}
+                    width={250}
+                    height={250}
                     onLoadingComplete={() => setGeneratedLoaded(true)}
                   />
                 </a>
