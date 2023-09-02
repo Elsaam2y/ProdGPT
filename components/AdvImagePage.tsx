@@ -254,7 +254,7 @@ export const AdvImagePage = () => {
         </div>
         {displayImages && (
           <div className="flex items-center justify-center">
-            {originalPhoto && (
+            {/* {originalPhoto && (
               <div className="flex flex-col items-center justify-center mr-8">
                 <h2 className="mb-1 font-medium text-lg">Uploaded Image</h2>
                 <Image
@@ -265,7 +265,7 @@ export const AdvImagePage = () => {
                   height={300}
                 />
               </div>
-            )}
+            )} */}
 
             {generatedImage && (
               <div className="flex flex-col items-center justify-center">
