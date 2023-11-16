@@ -52,7 +52,6 @@ npm install
 </div> -->
 
 5. Copy the `DATABASE_URL` and place it in your `.env` file. Your `.env` file should follow this structure:
-
 ```js
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
 
@@ -69,6 +68,11 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/Images
 # Database
 DATABASE_URL=
 ```
+6. Generate Prisma client by running the following command:
+   
+   ```bash
+    npx prisma db push
+    ```
 
 ## ⌨️ Running the application
 
